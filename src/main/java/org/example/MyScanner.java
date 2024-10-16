@@ -34,6 +34,9 @@ public class MyScanner {
     }
 
     public Token scan() throws Exception {
+        // Remove previous contents of the buffer
+        buffer.setLength(0);
+
         // use while loop to iterate through input stream
         int c = readNextChar();
         while (c != -1) {
@@ -70,31 +73,22 @@ public class MyScanner {
 
                 // Analyze the buffer to determine if it's a reserved word
                 if (!reservedWords.contains(getTokenBufferString())) {
-                    buffer.setLength(0);
                     return Token.ID;
                 } else if (Objects.equals(getTokenBufferString(), "declare")) {
-                    buffer.setLength(0);
                     return Token.DECLARE;
                 } else if (Objects.equals(getTokenBufferString(), "int")) {
-                    buffer.setLength(0);
                     return Token.INTDATATYPE;
                 } else if (Objects.equals(getTokenBufferString(), "print")) {
-                    buffer.setLength(0);
                     return  Token.PRINT;
                 } else if (Objects.equals(getTokenBufferString(), "set")) {
-                    buffer.setLength(0);
                     return  Token.SET;
                 } else if (Objects.equals(getTokenBufferString(), "if")) {
-                    buffer.setLength(0);
                     return  Token.IF;
                 } else if (Objects.equals(getTokenBufferString(), "then")) {
-                    buffer.setLength(0);
                     return  Token.THEN;
                 } else if (Objects.equals(getTokenBufferString(), "endif")) {
-                    buffer.setLength(0);
                     return  Token.ENDIF;
                 } else if (Objects.equals(getTokenBufferString(), "calc")) {
-                    buffer.setLength(0);
                     return  Token.CALC;
                 }
             }

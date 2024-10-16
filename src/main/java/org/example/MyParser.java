@@ -104,13 +104,14 @@ public class MyParser {
                 System.out.println("Parse Error: Expected declare");
                 System.exit(0);
             }
+
+            // Create the key to add to the Symbol Table
             String currentVarName = scanner.getTokenBufferString();
-            System.out.println(currentVarName);
+
             if (!match(MyScanner.Token.ID)) {
                 System.out.println("Parse Error: Expected id");
                 System.exit(0);
             }
-
             if (!match(MyScanner.Token.INTDATATYPE)) {
                 System.out.println("Parse Error: Expected declare intdatatype");
                 System.exit(0);

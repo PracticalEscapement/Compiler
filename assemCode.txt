@@ -1,0 +1,24 @@
+.data
+var int w
+var int x
+var int y
+.code
+loadintliteral ri1, 5
+storeintvar ri1, w
+loadintliteral ri2, 10
+storeintvar ri2, x
+loadintliteral ri3, 15
+storeintvar ri3, y
+printi x
+printi y
+printi w
+add ri2, ri3, ri4
+loadintliteral ri5, 4
+add ri4, ri5, ri6
+storeintvar ri6, w
+be ri2, ri3, equallabel
+branch endTestlabel
+:equallabel
+printi w
+printi x
+:endTestlabel

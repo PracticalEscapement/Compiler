@@ -58,7 +58,6 @@ public class MyScanner {
                     c = readNextChar();
                 }
                 unRead(c);
-                buffer.setLength(0);
                 return Token.INTLITERAL;
             }
             // If the character is a letter, or letters add them to buffer
